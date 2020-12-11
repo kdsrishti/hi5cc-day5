@@ -1,0 +1,229 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>hi5cc-Day5</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css" id="theme">
+		<link rel="stylesheet" href="css/kd-styles.css" id="theme">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<small id='text-change-color'>hi5cc</small>
+					<h2>Introduction to<br/>Creative Coding</h2>
+					<h6>day 5</h6>
+					<small>Karan Dudeja, Dec 2020</small>
+					<p class="text-muted">Srishti Manipal Institute of Art, Design and Technology<br/>
+						Interim 2020
+					</p>
+				</section>
+				
+				<section>
+					<section>
+						<h2>FUNCTIONS</h2>
+						<p id="fun-text">function nameHere()</p>
+						<p><small class="text-muted">A set of statements that perform a specific task.<br/>Divide bigger program into manageable modules.</small></p>
+						<pre><code class="lang-js" data-line-numbers="1,5 | 2-3 | 6-7" data-trim data-noescape>
+							function setup() {
+							  createCanvas(400, 400); //i'm also a function
+							  background(230); //i'm also a function
+							}
+							function draw() {
+							  fill(20); //i'm also a function
+							  circle(posx * 20, height/2, 10); //i'm also a function
+							}
+						</code></pre>
+					</section>
+					<section> 
+						<h4>Components of a function</h4>
+						<p><small class="text-muted">The parts that are necessary to qualify a function.<br/>
+						Sometimes, functions are also called "methods"</small></p>
+						<small>
+						<p>Be sure to:</p>
+						<ul>
+							<li>Note the Parameters <span class="text-gray"> &nbsp;&nbsp; Parameters are also called Arguments</span></li>
+							<li>Number of Parameters <span class="text-gray"> &nbsp;&nbsp; can be zero or more</span></li>
+							<li>Datatype of Parameters <span class="text-gray"> &nbsp;&nbsp; this is required inside the function's working</span></li>
+							<li>Return type <span class="text-gray"> &nbsp;&nbsp; if the function returns a value and its type</span></li>
+						</ul>
+						</small>
+						<br/><br/>
+						<small><a class="text-green" href="https://github.com/processing/p5.js/wiki/JavaScript-basics#functions" target="_blank">📒Functions, Ref.1</a>
+							<a class="text-green" href="https://p5js.org/reference/#/p5/function" target="_blank"> &nbsp;&nbsp;&nbsp; 📒Functions, Ref.2</a></small>
+					</section> 
+					<section> 
+						<h4>Functions</h4>
+						<p><small class="text-muted">You can make your own functions 💪</small></p>
+						<small>
+						<p>To use Functions, you need to:</p>
+						<ul>
+							<li>Define <span class="text-gray">the new function</span></li>
+							<li>Call <span class="text-gray">the new function</span></li>
+						</ul>
+						</small>
+						<pre><code class="lang-js" data-line-numbers="8-11 | 9" data-trim data-noescape>
+							function setup() {
+							  ...
+							}
+							function draw() {
+							  ...
+							}
+
+							//your function
+							function myFunction(){
+							  ...
+							}
+						</code></pre>
+						<small><a class="text-green" href="https://github.com/processing/p5.js/wiki/JavaScript-basics#functions" target="_blank">📒Functions, Ref.1</a>
+							<a class="text-green" href="https://p5js.org/reference/#/p5/function" target="_blank"> &nbsp;&nbsp;&nbsp; 📒Functions, Ref.2</a></small>
+					</section> 
+					<section> 
+						<h4>Defining</h4>
+						<p><small class="text-muted">creating your function</small></p>
+						<pre><code class="lang-js" data-line-numbers="8-10" data-trim data-noescape>
+							function setup() {
+							 ...
+							}
+							function draw() {
+							 ...
+							}
+   
+							//defining the function
+							function myNewFunction(){
+							 ...
+							}
+						</code></pre>
+						<small><a class="text-green" href="https://github.com/processing/p5.js/wiki/JavaScript-basics#functions" target="_blank">📒Functions, Ref.1</a>
+							<a class="text-green" href="https://p5js.org/reference/#/p5/function" target="_blank"> &nbsp;&nbsp;&nbsp; 📒Functions, Ref.2</a></small>
+					</section>
+					<section> 
+						<h4>Calling</h4>
+						<p><small class="text-muted">calling, for execution</small></p>
+						<pre><code class="lang-js" data-line-numbers="5-6" data-trim data-noescape>
+							function setup() {
+							 ...
+							}
+							function draw() {
+							 //calling the function
+							 myNewFunction();
+							}
+   
+							//defining the function
+							function myNewFunction(){
+							 ...
+							}
+						</code></pre>
+						<small><a class="text-green" href="https://github.com/processing/p5.js/wiki/JavaScript-basics#functions" target="_blank">📒Functions, Ref.1</a>
+							<a class="text-green" href="https://p5js.org/reference/#/p5/function" target="_blank"> &nbsp;&nbsp;&nbsp; 📒Functions, Ref.2</a></small>
+					</section>
+					<section> 
+						<h4>Parameters</h4>
+						<p><small class="text-muted">none or more</small></p>
+						<pre><code class="lang-js" data-line-numbers="2|5|6|7|9" data-trim data-noescape>
+							function setup() {
+							 createCanvas(400,400); //a function with 2 parameters
+							}
+							function draw() {
+							 background(235); //background function called with 1 parameter
+							 background(235, 90, 45); //background function called with 3 parameters
+							 ellipse(width/2, height/2, 100, 80); //ellipse function called with 4 parameters
+							 //calling the function
+							 myNewFunction(); //myNewFunction function called with no parameter
+							}
+   
+							//defining the function
+							function myNewFunction(){
+							 ...
+							}
+						</code></pre>
+						<small><a class="text-green" href="https://github.com/processing/p5.js/wiki/JavaScript-basics#functions" target="_blank">📒Functions, Ref.1</a>
+							<a class="text-green" href="https://p5js.org/reference/#/p5/function" target="_blank"> &nbsp;&nbsp;&nbsp; 📒Functions, Ref.2</a></small>
+					</section>
+					<section> 
+						<h4>Passing Parameters</h4>
+						<p><small class="text-muted">be careful of the datatype</small></p>
+						<pre><code class="lang-js" data-line-numbers="2|5|6|7" data-trim data-noescape>
+							function setup() {
+							 createCanvas(400,400); //datatype is Number
+							}
+							function draw() {
+							 background(235); //datatype is Number
+							 fill(200, 50, 100); //datatype is Number, Number, Number
+							 text("hi5cc", 30, 250); //datatype is String, Number, Number
+							}
+						</code></pre>
+						<small><a class="text-green" href="https://github.com/processing/p5.js/wiki/JavaScript-basics#functions" target="_blank">📒Functions, Ref.1</a>
+							<a class="text-green" href="https://p5js.org/reference/#/p5/function" target="_blank"> &nbsp;&nbsp;&nbsp; 📒Functions, Ref.2</a></small>
+					</section>
+					<section> 
+						<h4>Return</h4>
+						<p><small class="text-muted">Value returned by your function</small></p>
+						<pre><code class="lang-js" data-line-numbers="7,9,11-14" data-trim data-noescape>
+							function setup() {
+							 createCanvas(400,400);
+							 rectMode(CENTER;)
+							}
+							function draw() {
+							 background(235);
+							 let h = calculateHeight(mouseX, mouseY);
+							 fill(50);
+							 square(100, 100, h); // value of h received from calculateHeight Function
+							}
+							function calculateHeight(a, b){
+							 let height = a - b; //datatype Number used for subtraction and calculating
+							 return height;
+							}
+						</code></pre>
+						<p><small><a class="text-green" href="https://github.com/processing/p5.js/wiki/JavaScript-basics#functions" target="_blank">📒Functions, Ref.1</a>
+							<a class="text-green" href="https://p5js.org/reference/#/p5/function" target="_blank"> &nbsp;&nbsp;&nbsp; 📒Functions, Ref.2</a></small></p>
+						<p>
+							<small>
+								<a class="text-green" href="https://editor.p5js.org/karanDudeja/sketches/xJrdi60JU" target="_blank">Try it here</a>
+							</small>
+						</p>
+					</section>
+				</section>
+				<section>
+					<h3>🤾<br/>Activity 1.4</h3>
+					<p><small class="text-muted">Submission details on the Blog</small></p>
+					<small><p>On a canvas with dimensions <span class="text-pink">600 x 400</span>, make a sketch that fulfils these conditions</p>
+					<ul>
+						<li><span class="text-pink">Make a function</span> that creates a pattern(s) using loop(s)</li>
+						<li>Colors on this sketch change based on time, a feature that can be switched on/off</li>
+						<li>This feature<span class="text-gray">(mentioned above)</span> is controlled with <span class="text-pink">a button</span>, that you'll make</li>
+						<li>Pressing 'x' on the keyboard switches the button OFF, which turns off the color-changing. Pressing 's' turns ON the button and feature</li>
+						<li>The only text, <span class="text-yellow">if required</span>, that can exist on the sketch, can be on the 'button'. Character limit is 8 at the max</li>
+						<li>The intricacies of the pattern should respond to the mouse movement on your sketch</li>						
+					</ul>
+					</small><br/><br/>
+					<small><a class="text-green" href="https://p5js.org/reference/#/p5/map" target="_blank">📒Map</a></small>
+				</section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+		<script src="js/kd-script.js"></script>
+	</body>
+</html>
